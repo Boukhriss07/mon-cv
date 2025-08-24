@@ -12,15 +12,24 @@
       height: 100%;
       font-family: 'Segoe UI', sans-serif;
       overflow: hidden;
+      position: relative;
     }
-
     #vanta-bg {
       width: 100%;
       height: 100%;
       position: absolute;
-      z-index: -1;
+      z-index: -2;
     }
-
+    .bg-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('YOUR_IMAGE_URL_HERE') center/cover no-repeat;
+      opacity: 0.4;
+      z-index: -3;
+    }
     .welcome-box {
       background-color: rgba(255, 255, 255, 0.9);
       padding: 50px;
@@ -35,13 +44,11 @@
       top: 50%;
       transform: translateY(-50%);
     }
-
     .welcome-box h1 {
       font-size: 28px;
       color: #0a2a66;
       margin-bottom: 30px;
     }
-
     .welcome-box button {
       background-color: #1a73e8;
       color: white;
@@ -52,35 +59,41 @@
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
-
     .welcome-box button:hover {
       background-color: #0b59d6;
     }
-
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
-    /* Ajout d'un effet parallax si tu veux un fond plus profond */
-    .parallax {
-      background-image: url('https://cdn.edi-static.fr/image/upload/c_scale,dpr_auto,f_auto,q_auto,w_auto/c_limit,w_auto/v1/Img/BREVE/2025/2/467949/risk-managers-quelles-attentes-envers-courtiers-assurance-F.jpg'); /* Remplace avec ton image */
-      height: 100%;
-      background-position: center;
-      background-attachment: fixed;
-      background-size: cover;
+    /* Petits icônes représentants les thèmes autour */
+    .icon-container {
+      position: absolute;
+      top: 10%;
+      left: 5%;
+      font-size: 24px;
+      color: white;
+    }
+    .icon-container span {
+      margin: 0 8px;
     }
   </style>
 </head>
-<body class="parallax">
+<body>
+  <div class="bg-image"></div>
   <div id="vanta-bg"></div>
+  <div class="icon-container">
+    <span>🛡️</span> <!-- sécurité / cybersécurité -->
+    <span>✈️</span> <!-- aviation -->
+    <span>📊</span> <!-- gestion de projet -->
+  </div>
 
   <div class="welcome-box">
-    <h1>Welcome to the personal website of <br><strong>Ihebeddine Boukhriss</strong></h1>
+    <h1>Welcome to the personal website of <br><strong>Iheb Boukhriss</strong></h1>
     <button onclick="checkPassword()">👉 Enter the site</button>
   </div>
 
-  <!-- Vanta.js & Three.js for background animation -->
+  <!-- Animation de fond -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
   <script>
@@ -100,11 +113,11 @@
     });
   </script>
 
-  <!-- Password protection -->
+  <!-- Protection par mot de passe -->
   <script>
     function checkPassword() {
       const password = prompt("Please enter the password:");
-      if (password === "password123") { // Change "yourPassword123" to your real password
+      if (password === "yourPassword123") {
         window.location.href = "dashboard.html";
       } else {
         alert("Incorrect password. Access denied.");
@@ -113,4 +126,3 @@
   </script>
 </body>
 </html>
-

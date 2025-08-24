@@ -46,7 +46,8 @@
       border-radius: 12px;
       text-align: center;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-      animation: fadeIn 1s ease-in-out;
+      animation: fadeInUp 1.2s ease-in-out both 0.6s;
+      /* délai pour que les icônes arrivent avant */
     }
 
     .welcome-box h1 {
@@ -70,43 +71,46 @@
       background-color: #0b59d6;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
     .icon-container {
       position: absolute;
       top: 10%;
       left: 5%;
       font-size: 24px;
       color: white;
+      animation: fadeInUp 1.2s ease-in-out both 0.2s;
     }
 
     .icon-container span {
       margin: 0 8px;
     }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 <body>
-  <!-- Arrière-plan image + animation -->
   <div class="bg-image"></div>
   <div id="vanta-bg"></div>
 
-  <!-- Icônes des domaines -->
   <div class="icon-container">
-    <span>🛡️</span> <!-- Cybersécurité -->
-    <span>✈️</span> <!-- Aviation -->
-    <span>📊</span> <!-- Project Management -->
+    <span>🛡️</span>
+    <span>✈️</span>
+    <span>📊</span>
   </div>
 
-  <!-- Boîte de bienvenue -->
   <div class="welcome-box">
     <h1>Welcome to the personal website of <br><strong>Iheb Boukhriss</strong></h1>
     <button onclick="checkPassword()">👉 Enter the site</button>
   </div>
 
-  <!-- Animation VANTA -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
   <script>
@@ -124,10 +128,7 @@
       waveSpeed: 0.5,
       zoom: 1
     });
-  </script>
 
-  <!-- Protection par mot de passe -->
-  <script>
     function checkPassword() {
       const password = prompt("Please enter the password:");
       if (password === "yourPassword123") {

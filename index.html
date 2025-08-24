@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Welcome - Iheb Boukhriss</title>
   <link rel="stylesheet" href="assets/style.css" />
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
   <style>
     html, body {
       margin: 0;
@@ -124,6 +125,18 @@
       zoom: 1
     });
   </script>
+  <button onclick="checkPassword()">👉 Enter the site</button>
+
+<script>
+  function checkPassword() {
+    const password = prompt("Please enter the password:");
+    if (password === "yourPassword123") {
+      window.location.href = "dashboard.html";
+    } else {
+      alert("Incorrect password. Access denied.");
+    }
+  }
+</script>
 
   <!-- Mot de passe -->
   <script>
@@ -138,3 +151,4 @@
   </script>
 </body>
 </html>
+

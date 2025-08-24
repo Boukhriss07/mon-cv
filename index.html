@@ -106,7 +106,7 @@
     <button onclick="checkPassword()">👉 Enter the site</button>
   </div>
 
-  <!-- Scripts animation -->
+  <!-- Animation VANTA -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
   <script>
@@ -125,20 +125,8 @@
       zoom: 1
     });
   </script>
-  <button onclick="checkPassword()">👉 Enter the site</button>
 
-<script>
-  function checkPassword() {
-    const password = prompt("Please enter the password:");
-    if (password === "yourPassword123") {
-      window.location.href = "dashboard.html";
-    } else {
-      alert("Incorrect password. Access denied.");
-    }
-  }
-</script>
-
-  <!-- Mot de passe -->
+  <!-- Protection par mot de passe -->
   <script>
     function checkPassword() {
       const password = prompt("Please enter the password:");
@@ -151,4 +139,3 @@
   </script>
 </body>
 </html>
-

@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <link rel="stylesheet" href="assets/style.css">
   <meta charset="UTF-8">
-  <title>Connexion</title>
-  <script>
-    function verifierMotDePasse() {
-      const motDePasse = document.getElementById("password").value;
-      const motDePasseCorrect = "1234"; // 🔐 Ton mot de passe ici
-
-      if (motDePasse === motDePasseCorrect) {
-        window.location.href = "dashboard.html";
-      } else {
-        alert("Mot de passe incorrect !");
-      }
-      return false;
-    }
-  </script>
+  <title>Connexion sécurisée</title>
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <h2>Accès protégé</h2>
-  <form onsubmit="return verifierMotDePasse()">
-    <input type="password" id="password" placeholder="Mot de passe" required />
-    <button type="submit">Entrer</button>
-  </form>
+  <div class="container">
+    <h1>Accès protégé</h1>
+    <p>Entrez le mot de passe pour accéder au site :</p>
+    <input type="password" id="password" placeholder="Mot de passe">
+    <button onclick="verifierMotDePasse()">Entrer</button>
+    <p id="erreur" style="color: red;"></p>
+  </div>
+  <script>
+    function verifierMotDePasse() {
+      const motDePasseCorrect = "1235";
+      const entre = document.getElementById("password").value;
+      if (entre === motDePasseCorrect) {
+        window.location.href = "dashboard.html";
+      } else {
+        document.getElementById("erreur").textContent = "Mot de passe incorrect.";
+      }
+    }
+  </script>
 </body>
 </html>
+
 

@@ -2,31 +2,65 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Connexion sécurisée</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bienvenue - Iheb Boukhriss</title>
   <link rel="stylesheet" href="assets/style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: linear-gradient(to right, #bdeafe, #e0f2fe);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .welcome-box {
+      background-color: white;
+      padding: 50px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .welcome-box h1 {
+      font-size: 32px;
+      color: #0a2a66;
+      margin-bottom: 30px;
+    }
+
+    .welcome-box a {
+      display: inline-block;
+      background-color: #1a73e8;
+      color: white;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+    }
+
+    .welcome-box a:hover {
+      background-color: #0b59d6;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Accès protégé</h1>
-    <p>Entrez le mot de passe pour accéder au site :</p>
-    <input type="password" id="password" placeholder="Mot de passe">
-    <button onclick="verifierMotDePasse()">Entrer</button>
-    <p id="erreur" style="color: red;"></p>
+  <div class="welcome-box">
+    <h1>Bienvenue sur le site personnel de <br><strong>Iheb Boukhriss</strong></h1>
+    <a href="dashboard.html">👉 Entrer dans le site</a>
   </div>
-  <script>
-    function verifierMotDePasse() {
-      const motDePasseCorrect = "1235";
-      const entre = document.getElementById("password").value;
-      if (entre === motDePasseCorrect) {
-        window.location.href = "dashboard.html";
-      } else {
-        document.getElementById("erreur").textContent = "Mot de passe incorrect.";
-      }
-    }
-  </script>
 </body>
 </html>
+
+
 
 
 

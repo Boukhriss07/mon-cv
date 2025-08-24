@@ -6,6 +6,7 @@
   <title>Welcome - Iheb Boukhriss</title>
   <link rel="stylesheet" href="assets/style.css" />
   <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+
   <style>
     html, body {
       margin: 0;
@@ -13,18 +14,8 @@
       height: 100%;
       font-family: 'Segoe UI', sans-serif;
       overflow: hidden;
-      position: relative;
-    }
-
-    .bg-image {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
       background: url('assets/img/praveen-thirumurugan-iKo_Mq9F9WY-unsplash.jpg') center/cover no-repeat;
-      opacity: 0.5;
-      z-index: -2;
+      background-attachment: fixed;
     }
 
     #vanta-bg {
@@ -32,6 +23,19 @@
       width: 100%;
       height: 100%;
       z-index: -1;
+    }
+
+    .icon-container {
+      position: absolute;
+      top: 10%;
+      left: 5%;
+      font-size: 24px;
+      color: white;
+      animation: fadeInUp 1.2s ease-in-out both 0.2s;
+    }
+
+    .icon-container span {
+      margin: 0 8px;
     }
 
     .welcome-box {
@@ -70,19 +74,6 @@
       background-color: #0b59d6;
     }
 
-    .icon-container {
-      position: absolute;
-      top: 10%;
-      left: 5%;
-      font-size: 24px;
-      color: white;
-      animation: fadeInUp 1.2s ease-in-out both 0.2s;
-    }
-
-    .icon-container span {
-      margin: 0 8px;
-    }
-
     @keyframes fadeInUp {
       0% {
         opacity: 0;
@@ -96,18 +87,17 @@
   </style>
 </head>
 <body>
-  <!-- Image de fond + Vanta -->
-  <div class="bg-image"></div>
+  <!-- Animation Vanta -->
   <div id="vanta-bg"></div>
 
-  <!-- Icônes -->
+  <!-- Icônes représentant les domaines -->
   <div class="icon-container">
-    <span>🛡️</span>
-    <span>✈️</span>
-    <span>📊</span>
+    <span>🛡️</span> <!-- Cybersécurité -->
+    <span>✈️</span> <!-- Aviation -->
+    <span>📊</span> <!-- Project Management -->
   </div>
 
-  <!-- Bloc principal -->
+  <!-- Boîte de bienvenue -->
   <div class="welcome-box">
     <h1>Welcome to the personal website of <br><strong>Iheb Boukhriss</strong></h1>
     <button onclick="checkPassword()">👉 Enter the site</button>
